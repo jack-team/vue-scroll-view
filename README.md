@@ -5,7 +5,7 @@
 ## 安装
 
 ``` bash
- npm install @tao/vue-scroll-view --save
+ npm install @jacker_tao/vue-scroll-view --save
 ```
 
 ## 全局注册
