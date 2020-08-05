@@ -7,16 +7,18 @@
       :enabled-down="true"
       @refresh="onRefresh"
       @loadMore="onLoadMore"
+      @init="scrollInit"
+      @scroll="onScroll"
     >
       <div v-for="(item,i) in list" :key="i">
-        <img img-url="http://static.yutao2012.com/4e68544292e72254f831c7e8e7a9de5a.jpg?w=5000&h=2830" />
+        <img img-url="http://static.yutao2012.com/4e68544292e72254f831c7e8e7a9de5a.jpg?w=5000&h=2830"/>
       </div>
     </ScrollView>
   </div>
 </template>
 
 <script>
-  import ScrollView from './../dist/main';
+  import ScrollView from './components/scrollView';
 
   export default {
     name: 'app',
@@ -28,7 +30,13 @@
         list: []
       }
     },
+    created() {
+      this.instance = null;
+    },
     methods: {
+      scrollInit(instance) {
+        this.instance = instance;
+      },
       onLoadMore(done) {
         setTimeout(() => {
           const list = Array.from({
@@ -43,6 +51,9 @@
           done();
           this.list = [1, 2, 3];
         }, 2000)
+      },
+      onScroll(y) {
+         console.log(y)
       }
     }
   }

@@ -84,6 +84,8 @@
         )
       );
 
+      this.$emit(`init`, this.scroll);
+
       /*主动触发图片懒加载*/
       this.onLazyLoad();
     },
@@ -114,6 +116,7 @@
       /*滚动事件*/
       onScroll(e, y) {
         this.scrollY = y;
+        this.$emit(`scroll`,y);
       },
 
       /*触发下拉加载*/
