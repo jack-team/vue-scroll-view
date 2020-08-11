@@ -1,7 +1,7 @@
 {
   "name": "@jacker_tao/vue-scroll-view",
   "description": "A Vue.js component",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "jacker",
   "license": "MIT",
   "private": false,
